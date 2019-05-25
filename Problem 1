@@ -1,0 +1,88 @@
+#include <iostream>
+#include <conio.h>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+	
+	int choice, i;
+	double param[2];
+	bool repeat = false;
+	char cont;
+
+	do {
+
+		cout << "---Menu---" << endl;
+		cout << "1. ADD" << endl
+			 << "2. SUBTRACT" << endl
+			 << "3. MULTIPLY" << endl
+		     << "4. DIVIDE" << endl
+			 << "5. MODULUS" << endl;
+
+		cout << "\nEnter your choice: "; cin >> choice;
+		cout << "Enter two number: ";
+
+		switch (choice)
+		{
+			case 1:
+			{
+				cin >> param[1] >> param[2];
+
+				int sum = param[1] + param[2];
+				cout << "\nResult: " << sum << endl;
+				break;
+			}
+			case 2:
+			{
+				cin >> param[1] >> param[2];
+			
+				int diff = param[1] - param[2];
+				cout << "\nResult: " << diff << endl;
+				break;
+			}
+			case 3:
+			{
+				cin >> param[1] >> param[2];
+
+				int prod = param[1] * param[2];
+				cout << "\nResult: " << prod << endl;
+				break;
+			}
+			case 4:
+			{
+				cin >> param[1] >> param[2];
+
+				double quo = param[1] / param[2];
+				cout << "\nResult: " << quo << endl;
+				break;
+			}
+			case 5:
+			{
+				int a, b;
+				cin >> a >> b;
+
+				int modulus = a % b;
+				cout << "\nResult: " << modulus << endl;
+				break;
+			}
+		}
+
+		cout << endl << endl << "Continue? [Y/N]: ";
+		cin >> cont;
+		if (cont == 'y' || cont == 'Y') {
+			system("CLS");
+			repeat = true;
+		}
+		else {
+			cout << endl << "---END---";
+			repeat = false;
+		}
+	} while (repeat);
+
+	_getch();
+	return 0;
+}
+
