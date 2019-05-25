@@ -1,0 +1,55 @@
+#include <iostream>
+#include <iomanip>
+#include <conio.h>
+#include <string>
+
+using namespace std;
+
+void BubbleSort(int Array[], int n) {
+	int i, j;
+	for (i = 0; i < n; ++i)
+	{
+
+		for (j = 0; j < n - i - 1; ++j)
+		{
+			if (Array[j] > Array[j + 1])
+			{
+
+				Array[j] = Array[j] + Array[j + 1];
+				Array[j + 1] = Array[j] - Array[j + 1];
+				Array[j] = Array[j] - Array[j + 1];
+			}
+		}
+	}
+}
+
+int main() {
+	int ArraySize;
+	int i;
+	cout << endl << "Enter array size: ";
+	cin >> ArraySize;
+	
+	int* Data = new int[ArraySize];
+
+	for (i = 0; i < ArraySize; i++) {
+		cout << "Data " << i + 1 << ": ";
+		cin >> Data[i];
+	}
+
+	cout << endl << "Before Sorting:";
+	for (i = 0; i < ArraySize; i++) {
+		cout << "  " << Data[i];
+	}
+
+	BubbleSort(Data, ArraySize);
+
+	cout << endl << "Sort Result:";
+	for (i = 0; i < ArraySize; i++) {
+		cout << "  " << Data[i];
+	}
+
+	delete[] Data;
+
+	_getch();
+	return 0;
+}
